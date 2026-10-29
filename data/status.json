@@ -2,7 +2,7 @@
   "title": "Antra Multi-Source Stream & Resolver Status",
   "subtitle": "Real-time health, latency, and resolution status for Antra lossless music downloaders, metadata APIs, and audio stream resolvers.",
   "overall_status": "operational",
-  "last_updated": "2026-10-29T06:59:42.546453+00:00",
+  "last_updated": "2026-10-29T07:00:20.840073+00:00",
   "services": [
     {
       "id": "tidal-stream",
@@ -12,9 +12,9 @@
       "url": "https://listen.tidal.com",
       "status": "operational",
       "status_code": 403,
-      "latency_ms": 51.48,
+      "latency_ms": 244.39,
       "error": null,
-      "last_checked": "2026-10-29T06:59:42.546453+00:00",
+      "last_checked": "2026-10-29T07:00:20.840073+00:00",
       "history_30_days": [
         {
           "date": "day-29",
@@ -176,10 +176,10 @@
       "format": "ALAC / Dolby Atmos (24-bit/192kHz)",
       "url": "https://music.apple.com",
       "status": "operational",
-      "status_code": 403,
-      "latency_ms": 4.18,
+      "status_code": 200,
+      "latency_ms": 367.45,
       "error": null,
-      "last_checked": "2026-10-29T06:59:42.546453+00:00",
+      "last_checked": "2026-10-29T07:00:20.840073+00:00",
       "history_30_days": [
         {
           "date": "day-29",
@@ -341,10 +341,10 @@
       "format": "FLAC Ultra HD (24-bit/192kHz)",
       "url": "https://music.amazon.com",
       "status": "operational",
-      "status_code": 403,
-      "latency_ms": 4.12,
+      "status_code": 200,
+      "latency_ms": 352.45,
       "error": null,
-      "last_checked": "2026-10-29T06:59:42.546453+00:00",
+      "last_checked": "2026-10-29T07:00:20.840073+00:00",
       "history_30_days": [
         {
           "date": "day-29",
@@ -506,10 +506,10 @@
       "format": "FLAC (16-bit/44.1kHz 1411kbps)",
       "url": "https://api.deezer.com/version",
       "status": "operational",
-      "status_code": 403,
-      "latency_ms": 3.88,
+      "status_code": 200,
+      "latency_ms": 250.78,
       "error": null,
-      "last_checked": "2026-10-29T06:59:42.546453+00:00",
+      "last_checked": "2026-10-29T07:00:20.840073+00:00",
       "history_30_days": [
         {
           "date": "day-29",
@@ -671,10 +671,10 @@
       "format": "Hi-Res FLAC (24-bit/192kHz)",
       "url": "https://www.qobuz.com",
       "status": "operational",
-      "status_code": 403,
-      "latency_ms": 3.99,
+      "status_code": 200,
+      "latency_ms": 977.39,
       "error": null,
-      "last_checked": "2026-10-29T06:59:42.546453+00:00",
+      "last_checked": "2026-10-29T07:00:20.840073+00:00",
       "history_30_days": [
         {
           "date": "day-29",
@@ -836,10 +836,10 @@
       "format": "Vorbis / AAC 320kbps",
       "url": "https://open.spotify.com",
       "status": "operational",
-      "status_code": 403,
-      "latency_ms": 4.09,
+      "status_code": 200,
+      "latency_ms": 205.2,
       "error": null,
-      "last_checked": "2026-10-29T06:59:42.546453+00:00",
+      "last_checked": "2026-10-29T07:00:20.840073+00:00",
       "history_30_days": [
         {
           "date": "day-29",
@@ -1001,10 +1001,10 @@
       "format": "JSON Metadata / Cover Art Archive",
       "url": "https://musicbrainz.org/ws/2/artist/5b11f4ce-a62d-471e-81fc-a69a8278c7da?fmt=json",
       "status": "operational",
-      "status_code": 403,
-      "latency_ms": 3.96,
+      "status_code": 200,
+      "latency_ms": 666.8,
       "error": null,
-      "last_checked": "2026-10-29T06:59:42.546453+00:00",
+      "last_checked": "2026-10-29T07:00:20.840073+00:00",
       "history_30_days": [
         {
           "date": "day-29",
@@ -1166,10 +1166,10 @@
       "format": "Binary Distributions (Win/Mac/Linux)",
       "url": "https://api.github.com/repos/anandprtp/Antra/releases/latest",
       "status": "operational",
-      "status_code": 403,
-      "latency_ms": 3.82,
+      "status_code": 200,
+      "latency_ms": 200.07,
       "error": null,
-      "last_checked": "2026-10-29T06:59:42.546453+00:00",
+      "last_checked": "2026-10-29T07:00:20.840073+00:00",
       "history_30_days": [
         {
           "date": "day-29",
