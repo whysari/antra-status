@@ -61,12 +61,18 @@
         </div>
       </div>
 
-      <div class="flex items-center gap-2 text-xs text-slate-400">
-        <span id="last-updated-text">Updating metrics...</span>
-        <button id="refresh-btn" onclick="fetchStatus()" class="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors" title="Force Refresh">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="flex flex-col sm:flex-row sm:items-center gap-3 text-xs text-slate-400">
+        <div class="text-left sm:text-right">
+          <div id="last-updated-text" class="font-medium text-slate-300">Updating metrics...</div>
+          <div class="text-[11px] text-slate-500">
+            Cloud CI auto-runs every 15m • <a href="https://github.com/whysari/antra-status/actions/workflows/monitor.yml" target="_blank" class="text-emerald-400 hover:text-emerald-300 underline">Trigger CI ↗</a>
+          </div>
+        </div>
+        <button id="refresh-btn" onclick="handleRefresh()" class="flex items-center justify-center gap-2 px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 active:scale-95 text-slate-200 border border-slate-700/80 hover:border-emerald-500/50 transition-all font-medium shadow-sm cursor-pointer">
+          <svg id="refresh-icon" class="w-4 h-4 text-emerald-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
           </svg>
+          <span id="refresh-label">Run Live Probe</span>
         </button>
       </div>
     </header>
@@ -119,33 +125,101 @@
   </div>
 
   <script>
-    async function fetchStatus() {
-      const refreshBtn = document.getElementById('refresh-btn');
-      refreshBtn.classList.add('animate-spin');
+    let globalData = null;
+
+    async function pingEndpoint(url) {
+      const start = performance.now();
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 6000);
 
       try {
-        const res = await fetch('data/status.json?t=' + Date.now());
-        if (!res.ok) throw new Error('Status payload not found');
-        const data = await res.json();
-        renderDashboard(data);
+        await fetch(url, {
+          mode: 'no-cors',
+          cache: 'no-store',
+          signal: controller.signal
+        });
+        clearTimeout(timeoutId);
+        return {
+          ok: true,
+          latency: Math.round(performance.now() - start)
+        };
       } catch (err) {
-        console.error('Error fetching status:', err);
-      } finally {
-        setTimeout(() => refreshBtn.classList.remove('animate-spin'), 600);
+        clearTimeout(timeoutId);
+        return {
+          ok: false,
+          error: err.name === 'AbortError' ? 'Timeout' : 'Network/CORS'
+        };
       }
     }
 
+    async function fetchStatus(isManual = false) {
+      const refreshBtn = document.getElementById('refresh-btn');
+      const refreshIcon = document.getElementById('refresh-icon');
+      const refreshLabel = document.getElementById('refresh-label');
+      const statusText = document.getElementById('last-updated-text');
+
+      if (isManual) {
+        refreshIcon.classList.add('animate-spin');
+        refreshLabel.textContent = 'Probing live...';
+        statusText.textContent = 'Probing endpoints live from your device...';
+      }
+
+      try {
+        const res = await fetch('data/status.json?t=' + Date.now(), { cache: 'no-store' });
+        if (!res.ok) throw new Error('Status payload not found');
+        const data = await res.json();
+        globalData = data;
+
+        // Run client-side live probe across all endpoints in parallel
+        if (isManual || !window.__probedOnce) {
+          window.__probedOnce = true;
+          const pingPromises = data.services.map(async (svc) => {
+            const ping = await pingEndpoint(svc.url);
+            svc.client_ping = ping.ok ? ping.latency : null;
+            return svc;
+          });
+          await Promise.all(pingPromises);
+        }
+
+        renderDashboard(globalData, isManual);
+
+        if (isManual) {
+          refreshLabel.textContent = 'Probed ✓';
+          setTimeout(() => {
+            refreshLabel.textContent = 'Run Live Probe';
+          }, 2000);
+        }
+      } catch (err) {
+        console.error('Error fetching status:', err);
+        if (statusText) statusText.textContent = 'Probe fetch failed. Check connection.';
+      } finally {
+        if (refreshIcon) refreshIcon.classList.remove('animate-spin');
+      }
+    }
+
+    function handleRefresh() {
+      fetchStatus(true);
+    }
+
     function timeAgo(dateString) {
+      if (!dateString) return 'recently';
       const seconds = Math.floor((new Date() - new Date(dateString)) / 1000);
-      if (seconds < 60) return `${seconds}s ago`;
+      if (seconds < 60) return `${Math.max(1, seconds)}s ago`;
       const minutes = Math.floor(seconds / 60);
       if (minutes < 60) return `${minutes}m ago`;
       const hours = Math.floor(minutes / 60);
       return `${hours}h ago`;
     }
 
-    function renderDashboard(data) {
-      document.getElementById('last-updated-text').textContent = 'Last probe: ' + timeAgo(data.last_updated);
+    function renderDashboard(data, wasManualProbe = false) {
+      const statusText = document.getElementById('last-updated-text');
+      const nowTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+
+      if (wasManualProbe) {
+        statusText.innerHTML = `<span class="text-emerald-400 font-semibold">Live probe completed at ${nowTime}</span> <span class="text-slate-500">(CI: ${timeAgo(data.last_updated)})</span>`;
+      } else {
+        statusText.textContent = 'Last CI probe: ' + timeAgo(data.last_updated);
+      }
 
       const banner = document.getElementById('overall-banner');
       const overallText = document.getElementById('overall-text');
@@ -193,6 +267,28 @@
           </span>
         ` : '';
 
+        // Latency metric block: show Live Ping if available, plus Cloud CI metric
+        let latencyBadge = '';
+        if (svc.client_ping !== undefined && svc.client_ping !== null) {
+          latencyBadge = `
+            <div class="flex flex-col items-end gap-1">
+              <span class="text-xs font-mono px-2.5 py-1 rounded-lg bg-emerald-950/70 text-emerald-300 border border-emerald-500/40 flex items-center gap-1.5 shadow-sm" title="Real-time ping from your browser">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                ⚡ ${svc.client_ping} ms
+                <span class="text-[9px] uppercase tracking-wider text-emerald-400/80 font-bold">LIVE</span>
+              </span>
+              <span class="text-[10px] text-slate-500 font-mono">CI: ${svc.latency_ms} ms</span>
+            </div>
+          `;
+        } else {
+          latencyBadge = `
+            <span class="text-xs font-mono px-2.5 py-1 rounded-lg bg-slate-800/90 text-slate-300 border border-slate-700/50 flex items-center gap-1.5" title="Cloud GitHub Runner Probe">
+              <span class="inline-block w-1.5 h-1.5 rounded-full ${statusDot}"></span>
+              ⚡ ${svc.latency_ms} ms
+            </span>
+          `;
+        }
+
         // Render 30-day tick bar
         let ticksHtml = '';
         if (svc.history_30_days && svc.history_30_days.length > 0) {
@@ -218,11 +314,8 @@
               </div>
             </div>
 
-            <div class="flex items-center gap-2.5 self-start md:self-auto shrink-0">
-              <span class="text-xs font-mono px-2.5 py-1 rounded-lg bg-slate-800/90 text-slate-300 border border-slate-700/50 flex items-center gap-1.5">
-                <span class="inline-block w-1.5 h-1.5 rounded-full ${statusDot}"></span>
-                ${svc.latency_ms} ms
-              </span>
+            <div class="flex items-center gap-3 self-start md:self-auto shrink-0">
+              ${latencyBadge}
               <span class="text-xs font-semibold px-3 py-1 rounded-full border ${statusColor} flex items-center gap-1.5">
                 ${statusLabel}
               </span>
@@ -247,8 +340,8 @@
     }
 
     // Initial fetch and auto-refresh every 60 seconds
-    fetchStatus();
-    setInterval(fetchStatus, 60000);
+    fetchStatus(false);
+    setInterval(() => fetchStatus(false), 60000);
   </script>
 </body>
 </html>
