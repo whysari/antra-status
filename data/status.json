@@ -2,7 +2,7 @@
   "title": "Antra Service & Infrastructure Status",
   "subtitle": "Real-time automated uptime, latency, and incident monitoring for Antra lossless music pipeline.",
   "overall_status": "operational",
-  "last_updated": "2026-10-29T06:47:13.275490+00:00",
+  "last_updated": "2026-10-29T06:53:11.016788+00:00",
   "services": [
     {
       "id": "antra-releases",
@@ -11,9 +11,9 @@
       "url": "https://api.github.com/repos/anandprtp/Antra/releases/latest",
       "status": "operational",
       "status_code": 200,
-      "latency_ms": 212.54,
+      "latency_ms": 224.97,
       "error": null,
-      "last_checked": "2026-10-29T06:47:13.275490+00:00",
+      "last_checked": "2026-10-29T06:53:11.016788+00:00",
       "history_30_days": [
         {
           "date": "day-29",
@@ -175,9 +175,9 @@
       "url": "https://raw.githubusercontent.com/anandprtp/Antra/main/README.md",
       "status": "operational",
       "status_code": 200,
-      "latency_ms": 141.04,
+      "latency_ms": 194.4,
       "error": null,
-      "last_checked": "2026-10-29T06:47:13.275490+00:00",
+      "last_checked": "2026-10-29T06:53:11.016788+00:00",
       "history_30_days": [
         {
           "date": "day-29",
@@ -339,9 +339,9 @@
       "url": "https://api.deezer.com/version",
       "status": "operational",
       "status_code": 200,
-      "latency_ms": 324.71,
+      "latency_ms": 286.54,
       "error": null,
-      "last_checked": "2026-10-29T06:47:13.275490+00:00",
+      "last_checked": "2026-10-29T06:53:11.016788+00:00",
       "history_30_days": [
         {
           "date": "day-29",
@@ -503,9 +503,9 @@
       "url": "https://musicbrainz.org/ws/2/artist/5b11f4ce-a62d-471e-81fc-a69a8278c7da?fmt=json",
       "status": "operational",
       "status_code": 200,
-      "latency_ms": 521.1,
+      "latency_ms": 529.38,
       "error": null,
-      "last_checked": "2026-10-29T06:47:13.275490+00:00",
+      "last_checked": "2026-10-29T06:53:11.016788+00:00",
       "history_30_days": [
         {
           "date": "day-29",
@@ -667,9 +667,9 @@
       "url": "https://open.spotify.com",
       "status": "operational",
       "status_code": 200,
-      "latency_ms": 233.64,
+      "latency_ms": 195.01,
       "error": null,
-      "last_checked": "2026-10-29T06:47:13.275490+00:00",
+      "last_checked": "2026-10-29T06:53:11.016788+00:00",
       "history_30_days": [
         {
           "date": "day-29",
