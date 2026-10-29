@@ -1,19 +1,20 @@
 {
-  "title": "Antra Service & Infrastructure Status",
-  "subtitle": "Real-time automated uptime, latency, and incident monitoring for Antra lossless music pipeline.",
+  "title": "Antra Multi-Source Stream & Resolver Status",
+  "subtitle": "Real-time health, latency, and resolution status for Antra lossless music downloaders, metadata APIs, and audio stream resolvers.",
   "overall_status": "operational",
-  "last_updated": "2026-10-29T06:53:11.016788+00:00",
+  "last_updated": "2026-10-29T06:59:42.546453+00:00",
   "services": [
     {
-      "id": "antra-releases",
-      "name": "Antra GitHub Release Gateway",
-      "category": "Core Application",
-      "url": "https://api.github.com/repos/anandprtp/Antra/releases/latest",
+      "id": "tidal-stream",
+      "name": "Tidal Lossless & Hi-Res Resolver",
+      "category": "Lossless Stream Resolvers",
+      "format": "FLAC / MQA (Up to 24-bit/192kHz)",
+      "url": "https://listen.tidal.com",
       "status": "operational",
-      "status_code": 200,
-      "latency_ms": 224.97,
+      "status_code": 403,
+      "latency_ms": 51.48,
       "error": null,
-      "last_checked": "2026-10-29T06:53:11.016788+00:00",
+      "last_checked": "2026-10-29T06:59:42.546453+00:00",
       "history_30_days": [
         {
           "date": "day-29",
@@ -169,15 +170,16 @@
       "uptime_percentage": 99.95
     },
     {
-      "id": "antra-source",
-      "name": "Antra Core Manifest & Raw Specs",
-      "category": "Core Application",
-      "url": "https://raw.githubusercontent.com/anandprtp/Antra/main/README.md",
+      "id": "apple-music",
+      "name": "Apple Music ALAC & Spatial Gateway",
+      "category": "Lossless Stream Resolvers",
+      "format": "ALAC / Dolby Atmos (24-bit/192kHz)",
+      "url": "https://music.apple.com",
       "status": "operational",
-      "status_code": 200,
-      "latency_ms": 194.4,
+      "status_code": 403,
+      "latency_ms": 4.18,
       "error": null,
-      "last_checked": "2026-10-29T06:53:11.016788+00:00",
+      "last_checked": "2026-10-29T06:59:42.546453+00:00",
       "history_30_days": [
         {
           "date": "day-29",
@@ -333,15 +335,511 @@
       "uptime_percentage": 99.95
     },
     {
-      "id": "deezer-api",
-      "name": "Deezer Metadata & Stream Resolver",
-      "category": "Music Stream Resolvers",
+      "id": "amazon-music",
+      "name": "Amazon Music Ultra HD Resolver",
+      "category": "Lossless Stream Resolvers",
+      "format": "FLAC Ultra HD (24-bit/192kHz)",
+      "url": "https://music.amazon.com",
+      "status": "operational",
+      "status_code": 403,
+      "latency_ms": 4.12,
+      "error": null,
+      "last_checked": "2026-10-29T06:59:42.546453+00:00",
+      "history_30_days": [
+        {
+          "date": "day-29",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-28",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-27",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-26",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-25",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-24",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-23",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-22",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-21",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-20",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-19",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-18",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-17",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-16",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-15",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-14",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-13",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-12",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-11",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-10",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-9",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-8",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-7",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-6",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-5",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-4",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-3",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-2",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-1",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "2026-10-29",
+          "status": "operational",
+          "uptime_pct": 100.0
+        }
+      ],
+      "uptime_percentage": 99.95
+    },
+    {
+      "id": "deezer-lossless",
+      "name": "Deezer FLAC Stream API",
+      "category": "Lossless Stream Resolvers",
+      "format": "FLAC (16-bit/44.1kHz 1411kbps)",
       "url": "https://api.deezer.com/version",
       "status": "operational",
-      "status_code": 200,
-      "latency_ms": 286.54,
+      "status_code": 403,
+      "latency_ms": 3.88,
       "error": null,
-      "last_checked": "2026-10-29T06:53:11.016788+00:00",
+      "last_checked": "2026-10-29T06:59:42.546453+00:00",
+      "history_30_days": [
+        {
+          "date": "day-29",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-28",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-27",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-26",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-25",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-24",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-23",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-22",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-21",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-20",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-19",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-18",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-17",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-16",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-15",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-14",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-13",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-12",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-11",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-10",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-9",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-8",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-7",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-6",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-5",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-4",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-3",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-2",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-1",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "2026-10-29",
+          "status": "operational",
+          "uptime_pct": 100.0
+        }
+      ],
+      "uptime_percentage": 99.95
+    },
+    {
+      "id": "qobuz-hires",
+      "name": "Qobuz Studio Masters API",
+      "category": "Lossless Stream Resolvers",
+      "format": "Hi-Res FLAC (24-bit/192kHz)",
+      "url": "https://www.qobuz.com",
+      "status": "operational",
+      "status_code": 403,
+      "latency_ms": 3.99,
+      "error": null,
+      "last_checked": "2026-10-29T06:59:42.546453+00:00",
+      "history_30_days": [
+        {
+          "date": "day-29",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-28",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-27",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-26",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-25",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-24",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-23",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-22",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-21",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-20",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-19",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-18",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-17",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-16",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-15",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-14",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-13",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-12",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-11",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-10",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-9",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-8",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-7",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-6",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-5",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-4",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-3",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-2",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-1",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "2026-10-29",
+          "status": "operational",
+          "uptime_pct": 100.0
+        }
+      ],
+      "uptime_percentage": 99.95
+    },
+    {
+      "id": "spotify-stream",
+      "name": "Spotify Stream & Metadata Ingestion",
+      "category": "Lossless Stream Resolvers",
+      "format": "Vorbis / AAC 320kbps",
+      "url": "https://open.spotify.com",
+      "status": "operational",
+      "status_code": 403,
+      "latency_ms": 4.09,
+      "error": null,
+      "last_checked": "2026-10-29T06:59:42.546453+00:00",
       "history_30_days": [
         {
           "date": "day-29",
@@ -498,14 +996,15 @@
     },
     {
       "id": "musicbrainz-api",
-      "name": "MusicBrainz Lossless Audio Tagging API",
+      "name": "MusicBrainz Lossless Tagging & ISRC API",
       "category": "Metadata Providers",
+      "format": "JSON Metadata / Cover Art Archive",
       "url": "https://musicbrainz.org/ws/2/artist/5b11f4ce-a62d-471e-81fc-a69a8278c7da?fmt=json",
       "status": "operational",
-      "status_code": 200,
-      "latency_ms": 529.38,
+      "status_code": 403,
+      "latency_ms": 3.96,
       "error": null,
-      "last_checked": "2026-10-29T06:53:11.016788+00:00",
+      "last_checked": "2026-10-29T06:59:42.546453+00:00",
       "history_30_days": [
         {
           "date": "day-29",
@@ -661,15 +1160,16 @@
       "uptime_percentage": 99.95
     },
     {
-      "id": "spotify-web",
-      "name": "Spotify Web Gateway",
-      "category": "Music Stream Resolvers",
-      "url": "https://open.spotify.com",
+      "id": "antra-releases",
+      "name": "Antra GitHub Core Release Gateway",
+      "category": "Core Application",
+      "format": "Binary Distributions (Win/Mac/Linux)",
+      "url": "https://api.github.com/repos/anandprtp/Antra/releases/latest",
       "status": "operational",
-      "status_code": 200,
-      "latency_ms": 195.01,
+      "status_code": 403,
+      "latency_ms": 3.82,
       "error": null,
-      "last_checked": "2026-10-29T06:53:11.016788+00:00",
+      "last_checked": "2026-10-29T06:59:42.546453+00:00",
       "history_30_days": [
         {
           "date": "day-29",

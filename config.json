@@ -1,49 +1,84 @@
 {
-  "title": "Antra Service & Infrastructure Status",
-  "subtitle": "Real-time automated uptime, latency, and incident monitoring for Antra lossless music pipeline.",
+  "title": "Antra Multi-Source Stream & Resolver Status",
+  "subtitle": "Real-time health, latency, and resolution status for Antra lossless music downloaders, metadata APIs, and audio stream resolvers.",
   "check_interval_minutes": 15,
   "services": [
     {
-      "id": "antra-releases",
-      "name": "Antra GitHub Release Gateway",
-      "category": "Core Application",
-      "url": "https://api.github.com/repos/anandprtp/Antra/releases/latest",
+      "id": "tidal-stream",
+      "name": "Tidal Lossless & Hi-Res Resolver",
+      "category": "Lossless Stream Resolvers",
+      "format": "FLAC / MQA (Up to 24-bit/192kHz)",
+      "url": "https://listen.tidal.com",
       "method": "GET",
       "expected_status": 200,
       "timeout_seconds": 10
     },
     {
-      "id": "antra-source",
-      "name": "Antra Core Manifest & Raw Specs",
-      "category": "Core Application",
-      "url": "https://raw.githubusercontent.com/anandprtp/Antra/main/README.md",
+      "id": "apple-music",
+      "name": "Apple Music ALAC & Spatial Gateway",
+      "category": "Lossless Stream Resolvers",
+      "format": "ALAC / Dolby Atmos (24-bit/192kHz)",
+      "url": "https://music.apple.com",
       "method": "GET",
       "expected_status": 200,
-      "timeout_seconds": 8
+      "timeout_seconds": 10
     },
     {
-      "id": "deezer-api",
-      "name": "Deezer Metadata & Stream Resolver",
-      "category": "Music Stream Resolvers",
+      "id": "amazon-music",
+      "name": "Amazon Music Ultra HD Resolver",
+      "category": "Lossless Stream Resolvers",
+      "format": "FLAC Ultra HD (24-bit/192kHz)",
+      "url": "https://music.amazon.com",
+      "method": "GET",
+      "expected_status": 200,
+      "timeout_seconds": 10
+    },
+    {
+      "id": "deezer-lossless",
+      "name": "Deezer FLAC Stream API",
+      "category": "Lossless Stream Resolvers",
+      "format": "FLAC (16-bit/44.1kHz 1411kbps)",
       "url": "https://api.deezer.com/version",
       "method": "GET",
       "expected_status": 200,
       "timeout_seconds": 8
     },
     {
+      "id": "qobuz-hires",
+      "name": "Qobuz Studio Masters API",
+      "category": "Lossless Stream Resolvers",
+      "format": "Hi-Res FLAC (24-bit/192kHz)",
+      "url": "https://www.qobuz.com",
+      "method": "GET",
+      "expected_status": 200,
+      "timeout_seconds": 10
+    },
+    {
+      "id": "spotify-stream",
+      "name": "Spotify Stream & Metadata Ingestion",
+      "category": "Lossless Stream Resolvers",
+      "format": "Vorbis / AAC 320kbps",
+      "url": "https://open.spotify.com",
+      "method": "GET",
+      "expected_status": 200,
+      "timeout_seconds": 10
+    },
+    {
       "id": "musicbrainz-api",
-      "name": "MusicBrainz Lossless Audio Tagging API",
+      "name": "MusicBrainz Lossless Tagging & ISRC API",
       "category": "Metadata Providers",
+      "format": "JSON Metadata / Cover Art Archive",
       "url": "https://musicbrainz.org/ws/2/artist/5b11f4ce-a62d-471e-81fc-a69a8278c7da?fmt=json",
       "method": "GET",
       "expected_status": 200,
       "timeout_seconds": 10
     },
     {
-      "id": "spotify-web",
-      "name": "Spotify Web Gateway",
-      "category": "Music Stream Resolvers",
-      "url": "https://open.spotify.com",
+      "id": "antra-releases",
+      "name": "Antra GitHub Core Release Gateway",
+      "category": "Core Application",
+      "format": "Binary Distributions (Win/Mac/Linux)",
+      "url": "https://api.github.com/repos/anandprtp/Antra/releases/latest",
       "method": "GET",
       "expected_status": 200,
       "timeout_seconds": 10

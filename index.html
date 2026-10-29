@@ -172,13 +172,32 @@
         const isDegraded = svc.status === 'degraded';
 
         const statusColor = isUp ? 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20' : (isDegraded ? 'text-amber-400 bg-amber-500/10 border-amber-500/20' : 'text-rose-400 bg-rose-500/10 border-rose-500/20');
+        const statusDot = isUp ? 'bg-emerald-400' : (isDegraded ? 'bg-amber-400' : 'bg-rose-400');
         const statusLabel = isUp ? 'Operational' : (isDegraded ? 'Degraded' : 'Major Outage');
+
+        // Brand icon helper
+        const getServiceIcon = (id) => {
+          if (id.includes('tidal')) return `<span class="w-8 h-8 rounded-lg bg-black text-white flex items-center justify-center font-black text-xs border border-slate-700">T</span>`;
+          if (id.includes('apple')) return `<span class="w-8 h-8 rounded-lg bg-gradient-to-tr from-pink-500 to-rose-500 text-white flex items-center justify-center font-bold text-xs shadow-sm"></span>`;
+          if (id.includes('amazon')) return `<span class="w-8 h-8 rounded-lg bg-sky-950 text-cyan-400 border border-cyan-500/30 flex items-center justify-center font-bold text-xs">az</span>`;
+          if (id.includes('deezer')) return `<span class="w-8 h-8 rounded-lg bg-purple-950 text-purple-300 border border-purple-500/30 flex items-center justify-center font-bold text-xs">dz</span>`;
+          if (id.includes('qobuz')) return `<span class="w-8 h-8 rounded-lg bg-slate-900 text-amber-300 border border-amber-500/30 flex items-center justify-center font-bold text-xs">Q</span>`;
+          if (id.includes('spotify')) return `<span class="w-8 h-8 rounded-lg bg-emerald-950 text-emerald-400 border border-emerald-500/30 flex items-center justify-center font-bold text-xs">●</span>`;
+          if (id.includes('musicbrainz')) return `<span class="w-8 h-8 rounded-lg bg-indigo-950 text-indigo-300 border border-indigo-500/30 flex items-center justify-center font-bold text-xs">MB</span>`;
+          return `<span class="w-8 h-8 rounded-lg bg-slate-800 text-slate-300 flex items-center justify-center font-bold text-xs">A</span>`;
+        };
+
+        const formatBadge = svc.format ? `
+          <span class="text-[11px] font-mono px-2 py-0.5 rounded-md bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">
+            ${svc.format}
+          </span>
+        ` : '';
 
         // Render 30-day tick bar
         let ticksHtml = '';
         if (svc.history_30_days && svc.history_30_days.length > 0) {
           ticksHtml = svc.history_30_days.map(d => {
-            const tickColor = d.status === 'operational' ? 'bg-emerald-500 hover:bg-emerald-400' : (d.status === 'degraded' ? 'bg-amber-500 hover:bg-amber-400' : 'bg-rose-500 hover:bg-rose-400');
+            const tickColor = d.status === 'operational' ? 'bg-emerald-500/80 hover:bg-emerald-400' : (d.status === 'degraded' ? 'bg-amber-500 hover:bg-amber-400' : 'bg-rose-500 hover:bg-rose-400');
             return `<div class="h-8 flex-1 rounded-sm ${tickColor} uptime-bar-tick cursor-pointer" title="${d.date}: ${d.status.toUpperCase()} (${d.uptime_pct}%)"></div>`;
           }).join('');
         }
@@ -186,20 +205,25 @@
         const card = document.createElement('div');
         card.className = 'p-5 md:p-6 rounded-2xl bg-cardDark border border-borderDark hover:border-slate-700 transition-all shadow-md';
         card.innerHTML = `
-          <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 mb-4">
-            <div>
-              <div class="flex items-center gap-2">
-                <span class="text-xs font-semibold px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700/60 uppercase tracking-wider">${svc.category}</span>
-                <span class="text-xs text-slate-500 truncate max-w-xs">${svc.url}</span>
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+            <div class="flex items-start gap-3.5">
+              ${getServiceIcon(svc.id)}
+              <div>
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700/60 uppercase tracking-wider">${svc.category}</span>
+                  ${formatBadge}
+                </div>
+                <h3 class="text-base font-semibold text-white mt-1">${svc.name}</h3>
+                <span class="text-xs text-slate-500 truncate block mt-0.5">${svc.url}</span>
               </div>
-              <h3 class="text-base font-semibold text-white mt-1.5">${svc.name}</h3>
             </div>
 
-            <div class="flex items-center gap-3 self-start md:self-auto">
-              <span class="text-xs font-mono px-2 py-1 rounded bg-slate-800/80 text-slate-300 border border-slate-700/40">
-                ⚡ ${svc.latency_ms} ms
+            <div class="flex items-center gap-2.5 self-start md:self-auto shrink-0">
+              <span class="text-xs font-mono px-2.5 py-1 rounded-lg bg-slate-800/90 text-slate-300 border border-slate-700/50 flex items-center gap-1.5">
+                <span class="inline-block w-1.5 h-1.5 rounded-full ${statusDot}"></span>
+                ${svc.latency_ms} ms
               </span>
-              <span class="text-xs font-semibold px-2.5 py-1 rounded-full border ${statusColor}">
+              <span class="text-xs font-semibold px-3 py-1 rounded-full border ${statusColor} flex items-center gap-1.5">
                 ${statusLabel}
               </span>
             </div>

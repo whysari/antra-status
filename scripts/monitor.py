@@ -169,6 +169,7 @@ def main():
             "id": svc["id"],
             "name": svc["name"],
             "category": svc.get("category", "General"),
+            "format": svc.get("format", ""),
             "url": svc["url"],
             "status": probe["status"],
             "status_code": probe["status_code"],
