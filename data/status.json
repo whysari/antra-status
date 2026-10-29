@@ -1,8 +1,8 @@
 {
   "title": "Antra Multi-Source Stream & Resolver Status",
   "subtitle": "Real-time health, latency, and resolution status for Antra lossless music downloaders, metadata APIs, and audio stream resolvers.",
-  "overall_status": "operational",
-  "last_updated": "2026-10-29T07:00:20.840073+00:00",
+  "overall_status": "outage",
+  "last_updated": "2026-10-29T07:13:11.971490+00:00",
   "services": [
     {
       "id": "tidal-stream",
@@ -12,9 +12,9 @@
       "url": "https://listen.tidal.com",
       "status": "operational",
       "status_code": 403,
-      "latency_ms": 244.39,
+      "latency_ms": 252.19,
       "error": null,
-      "last_checked": "2026-10-29T07:00:20.840073+00:00",
+      "last_checked": "2026-10-29T07:13:11.971490+00:00",
       "history_30_days": [
         {
           "date": "day-29",
@@ -177,9 +177,9 @@
       "url": "https://music.apple.com",
       "status": "operational",
       "status_code": 200,
-      "latency_ms": 367.45,
+      "latency_ms": 833.84,
       "error": null,
-      "last_checked": "2026-10-29T07:00:20.840073+00:00",
+      "last_checked": "2026-10-29T07:13:11.971490+00:00",
       "history_30_days": [
         {
           "date": "day-29",
@@ -342,9 +342,9 @@
       "url": "https://music.amazon.com",
       "status": "operational",
       "status_code": 200,
-      "latency_ms": 352.45,
+      "latency_ms": 300.09,
       "error": null,
-      "last_checked": "2026-10-29T07:00:20.840073+00:00",
+      "last_checked": "2026-10-29T07:13:11.971490+00:00",
       "history_30_days": [
         {
           "date": "day-29",
@@ -507,9 +507,9 @@
       "url": "https://api.deezer.com/version",
       "status": "operational",
       "status_code": 200,
-      "latency_ms": 250.78,
+      "latency_ms": 296.79,
       "error": null,
-      "last_checked": "2026-10-29T07:00:20.840073+00:00",
+      "last_checked": "2026-10-29T07:13:11.971490+00:00",
       "history_30_days": [
         {
           "date": "day-29",
@@ -672,9 +672,9 @@
       "url": "https://www.qobuz.com",
       "status": "operational",
       "status_code": 200,
-      "latency_ms": 977.39,
+      "latency_ms": 685.37,
       "error": null,
-      "last_checked": "2026-10-29T07:00:20.840073+00:00",
+      "last_checked": "2026-10-29T07:13:11.971490+00:00",
       "history_30_days": [
         {
           "date": "day-29",
@@ -837,9 +837,9 @@
       "url": "https://open.spotify.com",
       "status": "operational",
       "status_code": 200,
-      "latency_ms": 205.2,
+      "latency_ms": 194.91,
       "error": null,
-      "last_checked": "2026-10-29T07:00:20.840073+00:00",
+      "last_checked": "2026-10-29T07:13:11.971490+00:00",
       "history_30_days": [
         {
           "date": "day-29",
@@ -1000,11 +1000,11 @@
       "category": "Metadata Providers",
       "format": "JSON Metadata / Cover Art Archive",
       "url": "https://musicbrainz.org/ws/2/artist/5b11f4ce-a62d-471e-81fc-a69a8278c7da?fmt=json",
-      "status": "operational",
-      "status_code": 200,
-      "latency_ms": 666.8,
-      "error": null,
-      "last_checked": "2026-10-29T07:00:20.840073+00:00",
+      "status": "outage",
+      "status_code": 503,
+      "latency_ms": 580.68,
+      "error": "HTTP 503: Service Temporarily Unavailable",
+      "last_checked": "2026-10-29T07:13:11.971490+00:00",
       "history_30_days": [
         {
           "date": "day-29",
@@ -1153,11 +1153,11 @@
         },
         {
           "date": "2026-10-29",
-          "status": "operational",
-          "uptime_pct": 100.0
+          "status": "outage",
+          "uptime_pct": 95.0
         }
       ],
-      "uptime_percentage": 99.95
+      "uptime_percentage": 98.5
     },
     {
       "id": "antra-releases",
@@ -1167,9 +1167,9 @@
       "url": "https://api.github.com/repos/anandprtp/Antra/releases/latest",
       "status": "operational",
       "status_code": 200,
-      "latency_ms": 200.07,
+      "latency_ms": 274.78,
       "error": null,
-      "last_checked": "2026-10-29T07:00:20.840073+00:00",
+      "last_checked": "2026-10-29T07:13:11.971490+00:00",
       "history_30_days": [
         {
           "date": "day-29",
