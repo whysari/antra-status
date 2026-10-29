@@ -2,7 +2,7 @@
   "title": "Antra Multi-Source Stream & Resolver Status",
   "subtitle": "Real-time health, latency, and resolution status for Antra lossless music downloaders, metadata APIs, and audio stream resolvers.",
   "overall_status": "operational",
-  "last_updated": "2026-10-29T13:55:32.859371+00:00",
+  "last_updated": "2026-10-29T19:25:12.330401+00:00",
   "services": [
     {
       "id": "tidal-stream",
@@ -12,9 +12,9 @@
       "url": "https://listen.tidal.com",
       "status": "operational",
       "status_code": 403,
-      "latency_ms": 241.56,
+      "latency_ms": 291.33,
       "error": null,
-      "last_checked": "2026-10-29T13:55:32.859371+00:00",
+      "last_checked": "2026-10-29T19:25:12.330401+00:00",
       "history_30_days": [
         {
           "date": "day-29",
@@ -177,9 +177,9 @@
       "url": "https://music.apple.com",
       "status": "operational",
       "status_code": 200,
-      "latency_ms": 159.13,
+      "latency_ms": 251.78,
       "error": null,
-      "last_checked": "2026-10-29T13:55:32.859371+00:00",
+      "last_checked": "2026-10-29T19:25:12.330401+00:00",
       "history_30_days": [
         {
           "date": "day-29",
@@ -342,9 +342,9 @@
       "url": "https://music.amazon.com",
       "status": "operational",
       "status_code": 200,
-      "latency_ms": 189.85,
+      "latency_ms": 203.97,
       "error": null,
-      "last_checked": "2026-10-29T13:55:32.859371+00:00",
+      "last_checked": "2026-10-29T19:25:12.330401+00:00",
       "history_30_days": [
         {
           "date": "day-29",
@@ -507,9 +507,9 @@
       "url": "https://api.deezer.com/version",
       "status": "operational",
       "status_code": 200,
-      "latency_ms": 325.95,
+      "latency_ms": 305.12,
       "error": null,
-      "last_checked": "2026-10-29T13:55:32.859371+00:00",
+      "last_checked": "2026-10-29T19:25:12.330401+00:00",
       "history_30_days": [
         {
           "date": "day-29",
@@ -672,9 +672,9 @@
       "url": "https://www.qobuz.com",
       "status": "operational",
       "status_code": 200,
-      "latency_ms": 522.22,
+      "latency_ms": 918.88,
       "error": null,
-      "last_checked": "2026-10-29T13:55:32.859371+00:00",
+      "last_checked": "2026-10-29T19:25:12.330401+00:00",
       "history_30_days": [
         {
           "date": "day-29",
@@ -837,9 +837,9 @@
       "url": "https://open.spotify.com",
       "status": "operational",
       "status_code": 200,
-      "latency_ms": 119.19,
+      "latency_ms": 265.36,
       "error": null,
-      "last_checked": "2026-10-29T13:55:32.859371+00:00",
+      "last_checked": "2026-10-29T19:25:12.330401+00:00",
       "history_30_days": [
         {
           "date": "day-29",
@@ -1002,9 +1002,9 @@
       "url": "https://musicbrainz.org/ws/2/artist/5b11f4ce-a62d-471e-81fc-a69a8278c7da?fmt=json",
       "status": "operational",
       "status_code": 200,
-      "latency_ms": 432.51,
+      "latency_ms": 546.95,
       "error": null,
-      "last_checked": "2026-10-29T13:55:32.859371+00:00",
+      "last_checked": "2026-10-29T19:25:12.330401+00:00",
       "history_30_days": [
         {
           "date": "day-29",
@@ -1167,9 +1167,9 @@
       "url": "https://api.github.com/repos/anandprtp/Antra/releases/latest",
       "status": "operational",
       "status_code": 200,
-      "latency_ms": 177.21,
+      "latency_ms": 198.15,
       "error": null,
-      "last_checked": "2026-10-29T13:55:32.859371+00:00",
+      "last_checked": "2026-10-29T19:25:12.330401+00:00",
       "history_30_days": [
         {
           "date": "day-29",
