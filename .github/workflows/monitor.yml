@@ -18,6 +18,9 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # ----------------------------------------------------------------------------
+  # Job 1: Run Probes and Record Live Telemetry
+  # ----------------------------------------------------------------------------
   probe:
     name: Run Probes & Record Telemetry
     runs-on: ubuntu-latest
@@ -41,14 +44,27 @@ jobs:
           git add data/status.json
           git diff --quiet && git diff --staged --quiet || (git commit -m "chore(telemetry): update health and latency metrics [skip ci]" && git push)
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
+      - name: Setup Pages with Auto-Enablement
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: "."
 
+  # ----------------------------------------------------------------------------
+  # Job 2: Deploy to GitHub Pages Environment
+  # ----------------------------------------------------------------------------
+  deploy:
+    name: Deploy Live Dashboard
+    needs: probe
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
