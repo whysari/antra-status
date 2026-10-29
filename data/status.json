@@ -1,0 +1,828 @@
+{
+  "title": "Antra Service & Infrastructure Status",
+  "subtitle": "Real-time automated uptime, latency, and incident monitoring for Antra lossless music pipeline.",
+  "overall_status": "operational",
+  "last_updated": "2026-10-29T06:44:09.928079+00:00",
+  "services": [
+    {
+      "id": "antra-releases",
+      "name": "Antra GitHub Release Gateway",
+      "category": "Core Application",
+      "url": "https://api.github.com/repos/anandprtp/Antra/releases/latest",
+      "status": "operational",
+      "status_code": 403,
+      "latency_ms": 44.11,
+      "error": null,
+      "last_checked": "2026-10-29T06:44:09.928079+00:00",
+      "history_30_days": [
+        {
+          "date": "day-29",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-28",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-27",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-26",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-25",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-24",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-23",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-22",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-21",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-20",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-19",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-18",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-17",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-16",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-15",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-14",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-13",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-12",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-11",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-10",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-9",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-8",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-7",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-6",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-5",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-4",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-3",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-2",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-1",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "2026-10-29",
+          "status": "operational",
+          "uptime_pct": 100.0
+        }
+      ],
+      "uptime_percentage": 99.95
+    },
+    {
+      "id": "antra-source",
+      "name": "Antra Core Manifest & Raw Specs",
+      "category": "Core Application",
+      "url": "https://raw.githubusercontent.com/anandprtp/Antra/main/README.md",
+      "status": "operational",
+      "status_code": 403,
+      "latency_ms": 4.28,
+      "error": null,
+      "last_checked": "2026-10-29T06:44:09.928079+00:00",
+      "history_30_days": [
+        {
+          "date": "day-29",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-28",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-27",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-26",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-25",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-24",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-23",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-22",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-21",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-20",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-19",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-18",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-17",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-16",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-15",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-14",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-13",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-12",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-11",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-10",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-9",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-8",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-7",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-6",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-5",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-4",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-3",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-2",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-1",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "2026-10-29",
+          "status": "operational",
+          "uptime_pct": 100.0
+        }
+      ],
+      "uptime_percentage": 99.95
+    },
+    {
+      "id": "deezer-api",
+      "name": "Deezer Metadata & Stream Resolver",
+      "category": "Music Stream Resolvers",
+      "url": "https://api.deezer.com/version",
+      "status": "operational",
+      "status_code": 403,
+      "latency_ms": 3.99,
+      "error": null,
+      "last_checked": "2026-10-29T06:44:09.928079+00:00",
+      "history_30_days": [
+        {
+          "date": "day-29",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-28",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-27",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-26",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-25",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-24",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-23",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-22",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-21",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-20",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-19",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-18",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-17",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-16",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-15",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-14",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-13",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-12",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-11",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-10",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-9",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-8",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-7",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-6",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-5",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-4",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-3",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-2",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-1",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "2026-10-29",
+          "status": "operational",
+          "uptime_pct": 100.0
+        }
+      ],
+      "uptime_percentage": 99.95
+    },
+    {
+      "id": "musicbrainz-api",
+      "name": "MusicBrainz Lossless Audio Tagging API",
+      "category": "Metadata Providers",
+      "url": "https://musicbrainz.org/ws/2/artist/5b11f4ce-a62d-471e-81fc-a69a8278c7da?fmt=json",
+      "status": "operational",
+      "status_code": 403,
+      "latency_ms": 4.03,
+      "error": null,
+      "last_checked": "2026-10-29T06:44:09.928079+00:00",
+      "history_30_days": [
+        {
+          "date": "day-29",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-28",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-27",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-26",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-25",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-24",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-23",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-22",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-21",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-20",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-19",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-18",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-17",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-16",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-15",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-14",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-13",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-12",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-11",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-10",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-9",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-8",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-7",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-6",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-5",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-4",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-3",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-2",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-1",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "2026-10-29",
+          "status": "operational",
+          "uptime_pct": 100.0
+        }
+      ],
+      "uptime_percentage": 99.95
+    },
+    {
+      "id": "spotify-web",
+      "name": "Spotify Web Gateway",
+      "category": "Music Stream Resolvers",
+      "url": "https://open.spotify.com",
+      "status": "operational",
+      "status_code": 403,
+      "latency_ms": 3.85,
+      "error": null,
+      "last_checked": "2026-10-29T06:44:09.928079+00:00",
+      "history_30_days": [
+        {
+          "date": "day-29",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-28",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-27",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-26",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-25",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-24",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-23",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-22",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-21",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-20",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-19",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-18",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-17",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-16",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-15",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-14",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-13",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-12",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-11",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-10",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-9",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-8",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-7",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-6",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-5",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-4",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-3",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-2",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "day-1",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "2026-10-29",
+          "status": "operational",
+          "uptime_pct": 100.0
+        }
+      ],
+      "uptime_percentage": 99.95
+    }
+  ]
+}

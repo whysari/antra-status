@@ -1,0 +1,52 @@
+{
+  "title": "Antra Service & Infrastructure Status",
+  "subtitle": "Real-time automated uptime, latency, and incident monitoring for Antra lossless music pipeline.",
+  "check_interval_minutes": 15,
+  "services": [
+    {
+      "id": "antra-releases",
+      "name": "Antra GitHub Release Gateway",
+      "category": "Core Application",
+      "url": "https://api.github.com/repos/anandprtp/Antra/releases/latest",
+      "method": "GET",
+      "expected_status": 200,
+      "timeout_seconds": 10
+    },
+    {
+      "id": "antra-source",
+      "name": "Antra Core Manifest & Raw Specs",
+      "category": "Core Application",
+      "url": "https://raw.githubusercontent.com/anandprtp/Antra/main/README.md",
+      "method": "GET",
+      "expected_status": 200,
+      "timeout_seconds": 8
+    },
+    {
+      "id": "deezer-api",
+      "name": "Deezer Metadata & Stream Resolver",
+      "category": "Music Stream Resolvers",
+      "url": "https://api.deezer.com/version",
+      "method": "GET",
+      "expected_status": 200,
+      "timeout_seconds": 8
+    },
+    {
+      "id": "musicbrainz-api",
+      "name": "MusicBrainz Lossless Audio Tagging API",
+      "category": "Metadata Providers",
+      "url": "https://musicbrainz.org/ws/2/artist/5b11f4ce-a62d-471e-81fc-a69a8278c7da?fmt=json",
+      "method": "GET",
+      "expected_status": 200,
+      "timeout_seconds": 10
+    },
+    {
+      "id": "spotify-web",
+      "name": "Spotify Web Gateway",
+      "category": "Music Stream Resolvers",
+      "url": "https://open.spotify.com",
+      "method": "GET",
+      "expected_status": 200,
+      "timeout_seconds": 10
+    }
+  ]
+}

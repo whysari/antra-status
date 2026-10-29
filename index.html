@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Antra Service Status | Real-Time Lossless Pipeline Monitoring</title>
+  <meta name="description" content="Automated, real-time uptime and latency status for Antra lossless music library builder and stream resolvers.">
+  <link rel="icon" href="https://raw.githubusercontent.com/anandprtp/Antra/main/assets/icon.png" type="image/png">
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brandDark: '#0B0F19',
+            cardDark: '#111827',
+            borderDark: '#1F2937',
+            accentGreen: '#10B981',
+            accentYellow: '#F59E0B',
+            accentRed: '#EF4444',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @keyframes pulse-glow {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.15); }
+    }
+    .pulse-dot {
+      animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    .uptime-bar-tick {
+      transition: all 0.15s ease-in-out;
+    }
+    .uptime-bar-tick:hover {
+      transform: scaleY(1.35);
+    }
+  </style>
+</head>
+<body class="bg-brandDark text-slate-100 min-h-screen font-sans antialiased selection:bg-emerald-500 selection:text-white">
+
+  <!-- Main Container -->
+  <div class="max-w-4xl mx-auto px-4 py-12">
+
+    <!-- Header Section -->
+    <header class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 pb-8 border-b border-borderDark">
+      <div class="flex items-center gap-3.5">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-700 flex items-center justify-center shadow-lg shadow-emerald-500/20 text-white font-bold text-xl">
+          A
+        </div>
+        <div>
+          <h1 class="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
+            Antra Status
+            <span class="text-xs px-2 py-0.5 rounded-full font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">LIVE</span>
+          </h1>
+          <p class="text-xs text-slate-400">Automated probe monitoring for Antra lossless library infrastructure</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2 text-xs text-slate-400">
+        <span id="last-updated-text">Updating metrics...</span>
+        <button id="refresh-btn" onclick="fetchStatus()" class="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors" title="Force Refresh">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Overall Banner -->
+    <div id="overall-banner" class="my-8 p-4 md:p-5 rounded-2xl bg-emerald-950/40 border border-emerald-500/30 flex items-center justify-between shadow-xl shadow-emerald-950/20">
+      <div class="flex items-center gap-3.5">
+        <span class="relative flex h-3.5 w-3.5">
+          <span class="pulse-dot absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-500"></span>
+        </span>
+        <span id="overall-text" class="text-base md:text-lg font-semibold text-emerald-300 tracking-wide">
+          All Core Services Operational
+        </span>
+      </div>
+      <span class="text-xs font-mono text-emerald-400/80 bg-emerald-500/10 px-2.5 py-1 rounded-md border border-emerald-500/20">
+        100% Uptime
+      </span>
+    </div>
+
+    <!-- Services Grid -->
+    <main>
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-xs uppercase tracking-wider font-semibold text-slate-400">Monitored Endpoints & Resolvers</h2>
+        <span class="text-xs text-slate-500">Evaluated every 15 mins via GitHub Actions</span>
+      </div>
+
+      <div id="services-container" class="space-y-4">
+        <!-- Rendered dynamically -->
+        <div class="p-6 rounded-2xl bg-cardDark border border-borderDark text-center text-slate-400">
+          Loading live probe data...
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-16 pt-8 border-t border-borderDark flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <div>
+        Built & maintained by <a href="https://github.com/whysari" target="_blank" class="text-slate-300 hover:text-white font-medium underline">Ragchaa Battsengel (@whysari)</a>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="https://github.com/anandprtp/Antra" target="_blank" class="hover:text-slate-300 transition-colors">Upstream Antra</a>
+        <span>•</span>
+        <a href="https://github.com/whysari/antra-status" target="_blank" class="hover:text-slate-300 transition-colors">Monitor Source Code</a>
+        <span>•</span>
+        <span>Runs on GitHub Actions (0$ Infrastructure)</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    async function fetchStatus() {
+      const refreshBtn = document.getElementById('refresh-btn');
+      refreshBtn.classList.add('animate-spin');
+
+      try {
+        const res = await fetch('data/status.json?t=' + Date.now());
+        if (!res.ok) throw new Error('Status payload not found');
+        const data = await res.json();
+        renderDashboard(data);
+      } catch (err) {
+        console.error('Error fetching status:', err);
+      } finally {
+        setTimeout(() => refreshBtn.classList.remove('animate-spin'), 600);
+      }
+    }
+
+    function timeAgo(dateString) {
+      const seconds = Math.floor((new Date() - new Date(dateString)) / 1000);
+      if (seconds < 60) return `${seconds}s ago`;
+      const minutes = Math.floor(seconds / 60);
+      if (minutes < 60) return `${minutes}m ago`;
+      const hours = Math.floor(minutes / 60);
+      return `${hours}h ago`;
+    }
+
+    function renderDashboard(data) {
+      document.getElementById('last-updated-text').textContent = 'Last probe: ' + timeAgo(data.last_updated);
+
+      const banner = document.getElementById('overall-banner');
+      const overallText = document.getElementById('overall-text');
+
+      if (data.overall_status === 'operational') {
+        banner.className = 'my-8 p-4 md:p-5 rounded-2xl bg-emerald-950/40 border border-emerald-500/30 flex items-center justify-between shadow-xl shadow-emerald-950/20';
+        overallText.textContent = 'All Services Operational';
+        overallText.className = 'text-base md:text-lg font-semibold text-emerald-300 tracking-wide';
+      } else if (data.overall_status === 'degraded') {
+        banner.className = 'my-8 p-4 md:p-5 rounded-2xl bg-amber-950/40 border border-amber-500/30 flex items-center justify-between shadow-xl shadow-amber-950/20';
+        overallText.textContent = 'Partial Service Degradation Detected';
+        overallText.className = 'text-base md:text-lg font-semibold text-amber-300 tracking-wide';
+      } else {
+        banner.className = 'my-8 p-4 md:p-5 rounded-2xl bg-rose-950/40 border border-rose-500/30 flex items-center justify-between shadow-xl shadow-rose-950/20';
+        overallText.textContent = 'Major Service Outage Detected';
+        overallText.className = 'text-base md:text-lg font-semibold text-rose-300 tracking-wide';
+      }
+
+      const container = document.getElementById('services-container');
+      container.innerHTML = '';
+
+      data.services.forEach(svc => {
+        const isUp = svc.status === 'operational';
+        const isDegraded = svc.status === 'degraded';
+
+        const statusColor = isUp ? 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20' : (isDegraded ? 'text-amber-400 bg-amber-500/10 border-amber-500/20' : 'text-rose-400 bg-rose-500/10 border-rose-500/20');
+        const statusLabel = isUp ? 'Operational' : (isDegraded ? 'Degraded' : 'Major Outage');
+
+        // Render 30-day tick bar
+        let ticksHtml = '';
+        if (svc.history_30_days && svc.history_30_days.length > 0) {
+          ticksHtml = svc.history_30_days.map(d => {
+            const tickColor = d.status === 'operational' ? 'bg-emerald-500 hover:bg-emerald-400' : (d.status === 'degraded' ? 'bg-amber-500 hover:bg-amber-400' : 'bg-rose-500 hover:bg-rose-400');
+            return `<div class="h-8 flex-1 rounded-sm ${tickColor} uptime-bar-tick cursor-pointer" title="${d.date}: ${d.status.toUpperCase()} (${d.uptime_pct}%)"></div>`;
+          }).join('');
+        }
+
+        const card = document.createElement('div');
+        card.className = 'p-5 md:p-6 rounded-2xl bg-cardDark border border-borderDark hover:border-slate-700 transition-all shadow-md';
+        card.innerHTML = `
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 mb-4">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-semibold px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700/60 uppercase tracking-wider">${svc.category}</span>
+                <span class="text-xs text-slate-500 truncate max-w-xs">${svc.url}</span>
+              </div>
+              <h3 class="text-base font-semibold text-white mt-1.5">${svc.name}</h3>
+            </div>
+
+            <div class="flex items-center gap-3 self-start md:self-auto">
+              <span class="text-xs font-mono px-2 py-1 rounded bg-slate-800/80 text-slate-300 border border-slate-700/40">
+                ⚡ ${svc.latency_ms} ms
+              </span>
+              <span class="text-xs font-semibold px-2.5 py-1 rounded-full border ${statusColor}">
+                ${statusLabel}
+              </span>
+            </div>
+          </div>
+
+          <!-- 30 Days Uptime Bar -->
+          <div class="mt-4 pt-3 border-t border-borderDark/60">
+            <div class="flex items-center gap-1">
+              ${ticksHtml}
+            </div>
+            <div class="flex items-center justify-between mt-2 text-[11px] text-slate-500">
+              <span>30 days ago</span>
+              <span class="font-medium text-slate-400">${svc.uptime_percentage}% uptime</span>
+              <span>Today</span>
+            </div>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    // Initial fetch and auto-refresh every 60 seconds
+    fetchStatus();
+    setInterval(fetchStatus, 60000);
+  </script>
+</body>
+</html>
