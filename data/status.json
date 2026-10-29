@@ -2,7 +2,7 @@
   "title": "Antra Service & Infrastructure Status",
   "subtitle": "Real-time automated uptime, latency, and incident monitoring for Antra lossless music pipeline.",
   "overall_status": "operational",
-  "last_updated": "2026-10-29T06:44:09.928079+00:00",
+  "last_updated": "2026-10-29T06:47:13.275490+00:00",
   "services": [
     {
       "id": "antra-releases",
@@ -10,10 +10,10 @@
       "category": "Core Application",
       "url": "https://api.github.com/repos/anandprtp/Antra/releases/latest",
       "status": "operational",
-      "status_code": 403,
-      "latency_ms": 44.11,
+      "status_code": 200,
+      "latency_ms": 212.54,
       "error": null,
-      "last_checked": "2026-10-29T06:44:09.928079+00:00",
+      "last_checked": "2026-10-29T06:47:13.275490+00:00",
       "history_30_days": [
         {
           "date": "day-29",
@@ -174,10 +174,10 @@
       "category": "Core Application",
       "url": "https://raw.githubusercontent.com/anandprtp/Antra/main/README.md",
       "status": "operational",
-      "status_code": 403,
-      "latency_ms": 4.28,
+      "status_code": 200,
+      "latency_ms": 141.04,
       "error": null,
-      "last_checked": "2026-10-29T06:44:09.928079+00:00",
+      "last_checked": "2026-10-29T06:47:13.275490+00:00",
       "history_30_days": [
         {
           "date": "day-29",
@@ -338,10 +338,10 @@
       "category": "Music Stream Resolvers",
       "url": "https://api.deezer.com/version",
       "status": "operational",
-      "status_code": 403,
-      "latency_ms": 3.99,
+      "status_code": 200,
+      "latency_ms": 324.71,
       "error": null,
-      "last_checked": "2026-10-29T06:44:09.928079+00:00",
+      "last_checked": "2026-10-29T06:47:13.275490+00:00",
       "history_30_days": [
         {
           "date": "day-29",
@@ -502,10 +502,10 @@
       "category": "Metadata Providers",
       "url": "https://musicbrainz.org/ws/2/artist/5b11f4ce-a62d-471e-81fc-a69a8278c7da?fmt=json",
       "status": "operational",
-      "status_code": 403,
-      "latency_ms": 4.03,
+      "status_code": 200,
+      "latency_ms": 521.1,
       "error": null,
-      "last_checked": "2026-10-29T06:44:09.928079+00:00",
+      "last_checked": "2026-10-29T06:47:13.275490+00:00",
       "history_30_days": [
         {
           "date": "day-29",
@@ -666,10 +666,10 @@
       "category": "Music Stream Resolvers",
       "url": "https://open.spotify.com",
       "status": "operational",
-      "status_code": 403,
-      "latency_ms": 3.85,
+      "status_code": 200,
+      "latency_ms": 233.64,
       "error": null,
-      "last_checked": "2026-10-29T06:44:09.928079+00:00",
+      "last_checked": "2026-10-29T06:47:13.275490+00:00",
       "history_30_days": [
         {
           "date": "day-29",
