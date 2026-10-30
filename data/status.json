@@ -2,7 +2,7 @@
   "title": "Antra Multi-Source Stream & Resolver Status",
   "subtitle": "Real-time health, latency, and resolution status for Antra lossless music downloaders, metadata APIs, and audio stream resolvers.",
   "overall_status": "operational",
-  "last_updated": "2026-10-29T23:29:21.679033+00:00",
+  "last_updated": "2026-10-30T02:51:38.654126+00:00",
   "services": [
     {
       "id": "tidal-stream",
@@ -12,15 +12,10 @@
       "url": "https://listen.tidal.com",
       "status": "operational",
       "status_code": 403,
-      "latency_ms": 170.58,
+      "latency_ms": 211.64,
       "error": null,
-      "last_checked": "2026-10-29T23:29:21.679033+00:00",
+      "last_checked": "2026-10-30T02:51:38.654126+00:00",
       "history_30_days": [
-        {
-          "date": "day-29",
-          "status": "operational",
-          "uptime_pct": 100.0
-        },
         {
           "date": "day-28",
           "status": "operational",
@@ -163,6 +158,11 @@
         },
         {
           "date": "2026-10-29",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "2026-10-30",
           "status": "operational",
           "uptime_pct": 100.0
         }
@@ -177,15 +177,10 @@
       "url": "https://music.apple.com",
       "status": "operational",
       "status_code": 200,
-      "latency_ms": 66.34,
+      "latency_ms": 379.34,
       "error": null,
-      "last_checked": "2026-10-29T23:29:21.679033+00:00",
+      "last_checked": "2026-10-30T02:51:38.654126+00:00",
       "history_30_days": [
-        {
-          "date": "day-29",
-          "status": "operational",
-          "uptime_pct": 100.0
-        },
         {
           "date": "day-28",
           "status": "operational",
@@ -328,6 +323,11 @@
         },
         {
           "date": "2026-10-29",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "2026-10-30",
           "status": "operational",
           "uptime_pct": 100.0
         }
@@ -342,15 +342,10 @@
       "url": "https://music.amazon.com",
       "status": "operational",
       "status_code": 200,
-      "latency_ms": 226.96,
+      "latency_ms": 170.96,
       "error": null,
-      "last_checked": "2026-10-29T23:29:21.679033+00:00",
+      "last_checked": "2026-10-30T02:51:38.654126+00:00",
       "history_30_days": [
-        {
-          "date": "day-29",
-          "status": "operational",
-          "uptime_pct": 100.0
-        },
         {
           "date": "day-28",
           "status": "operational",
@@ -493,6 +488,11 @@
         },
         {
           "date": "2026-10-29",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "2026-10-30",
           "status": "operational",
           "uptime_pct": 100.0
         }
@@ -507,15 +507,10 @@
       "url": "https://api.deezer.com/version",
       "status": "operational",
       "status_code": 200,
-      "latency_ms": 381.19,
+      "latency_ms": 532.29,
       "error": null,
-      "last_checked": "2026-10-29T23:29:21.679033+00:00",
+      "last_checked": "2026-10-30T02:51:38.654126+00:00",
       "history_30_days": [
-        {
-          "date": "day-29",
-          "status": "operational",
-          "uptime_pct": 100.0
-        },
         {
           "date": "day-28",
           "status": "operational",
@@ -658,6 +653,11 @@
         },
         {
           "date": "2026-10-29",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "2026-10-30",
           "status": "operational",
           "uptime_pct": 100.0
         }
@@ -672,15 +672,10 @@
       "url": "https://www.qobuz.com",
       "status": "operational",
       "status_code": 200,
-      "latency_ms": 631.81,
+      "latency_ms": 617.67,
       "error": null,
-      "last_checked": "2026-10-29T23:29:21.679033+00:00",
+      "last_checked": "2026-10-30T02:51:38.654126+00:00",
       "history_30_days": [
-        {
-          "date": "day-29",
-          "status": "operational",
-          "uptime_pct": 100.0
-        },
         {
           "date": "day-28",
           "status": "operational",
@@ -823,6 +818,11 @@
         },
         {
           "date": "2026-10-29",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "2026-10-30",
           "status": "operational",
           "uptime_pct": 100.0
         }
@@ -837,15 +837,10 @@
       "url": "https://open.spotify.com",
       "status": "operational",
       "status_code": 200,
-      "latency_ms": 138.55,
+      "latency_ms": 219.66,
       "error": null,
-      "last_checked": "2026-10-29T23:29:21.679033+00:00",
+      "last_checked": "2026-10-30T02:51:38.654126+00:00",
       "history_30_days": [
-        {
-          "date": "day-29",
-          "status": "operational",
-          "uptime_pct": 100.0
-        },
         {
           "date": "day-28",
           "status": "operational",
@@ -990,6 +985,11 @@
           "date": "2026-10-29",
           "status": "operational",
           "uptime_pct": 100.0
+        },
+        {
+          "date": "2026-10-30",
+          "status": "operational",
+          "uptime_pct": 100.0
         }
       ],
       "uptime_percentage": 99.95
@@ -1002,15 +1002,10 @@
       "url": "https://musicbrainz.org/ws/2/artist/5b11f4ce-a62d-471e-81fc-a69a8278c7da?fmt=json",
       "status": "operational",
       "status_code": 200,
-      "latency_ms": 451.06,
+      "latency_ms": 590.24,
       "error": null,
-      "last_checked": "2026-10-29T23:29:21.679033+00:00",
+      "last_checked": "2026-10-30T02:51:38.654126+00:00",
       "history_30_days": [
-        {
-          "date": "day-29",
-          "status": "operational",
-          "uptime_pct": 100.0
-        },
         {
           "date": "day-28",
           "status": "operational",
@@ -1155,6 +1150,11 @@
           "date": "2026-10-29",
           "status": "outage",
           "uptime_pct": 95.0
+        },
+        {
+          "date": "2026-10-30",
+          "status": "operational",
+          "uptime_pct": 100.0
         }
       ],
       "uptime_percentage": 99.95
@@ -1167,15 +1167,10 @@
       "url": "https://api.github.com/repos/anandprtp/Antra/releases/latest",
       "status": "operational",
       "status_code": 200,
-      "latency_ms": 132.2,
+      "latency_ms": 205.6,
       "error": null,
-      "last_checked": "2026-10-29T23:29:21.679033+00:00",
+      "last_checked": "2026-10-30T02:51:38.654126+00:00",
       "history_30_days": [
-        {
-          "date": "day-29",
-          "status": "operational",
-          "uptime_pct": 100.0
-        },
         {
           "date": "day-28",
           "status": "operational",
@@ -1318,6 +1313,11 @@
         },
         {
           "date": "2026-10-29",
+          "status": "operational",
+          "uptime_pct": 100.0
+        },
+        {
+          "date": "2026-10-30",
           "status": "operational",
           "uptime_pct": 100.0
         }
